@@ -1,0 +1,156 @@
+/* Estilos básicos e globais */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8e0e0;
+    color: #5d4037;
+    margin: 0;
+    text-align: center;
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #ffb6c1;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+}
+
+/* Estilos do temporizador */
+.timer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.timer h3 {
+    margin: 0 0 5px 0;
+    color: #5d4037;
+}
+
+#countdown {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #8d4037;
+}
+
+/* Estilos da galeria de fotos */
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os cards na horizontal */
+    gap: 20px;
+    padding: 20px;
+}
+
+.photo-card {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    
+    /* Define uma largura máxima para o card para que as imagens se ajustem */
+    max-width: 270px;
+    width: 100%;
+
+    /* Animação unificada */
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.photo-card:hover {
+    transform: scale(1.05) rotate(3deg);
+}
+
+.photo-card img {
+    /* Ocupa 100% da largura do seu contêiner */
+    width: 100%;
+    /* Força a imagem a ter uma proporção de 1:1 (quadrado) */
+    aspect-ratio: 1 / 1; 
+    /* Recorta a imagem para preencher o espaço, mantendo a proporção */
+    object-fit: cover;
+    border-radius: 8px;
+    transition: filter 0.5s ease-in-out;
+    
+    display: block; 
+    margin: 0 auto;
+}
+
+.photo-card img:hover {
+    filter: grayscale(0%);
+}
+
+/* Estilos da seção de mensagem */
+.message {
+    padding: 40px;
+    background-color: #ffebee;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.message.slide-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos para o container de música e botão */
+.music-container {
+    margin-top: 20px;
+}
+
+#play-button {
+    background-color: #ffb6c1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#play-button:hover {
+    background-color: #ff8c94;
+}
+
+/* Estilos do rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffb6c1;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Animações com Javascript (classes de ativação) */
+.photo-card.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .photo-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 414px) {
+    /* ... (sua media query para o iPhone 11) ... */
+
+    .message {
+        opacity: 1; /* Garante que a opacidade seja sempre 100% no celular */
+        transform: translateY(0); /* Garante que o elemento esteja na posição correta */
+    }
+}
